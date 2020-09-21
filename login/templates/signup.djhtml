@@ -1,0 +1,26 @@
+{% extends 'base.djhtml' %}
+
+{% block title %}Signup Page{% endblock %}
+
+
+
+
+
+
+
+
+{% block middle_column %}
+    <form class="modal-content animate" method="post" action="{% url 'login:signup_view' %}">
+        {% csrf_token %}
+        <div class="container">
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+
+            <span style="color: blue">{{ msg }}</span>
+
+            <button type="submit">Create Account</button>
+        </div>
+    </form>
+{% endblock %}
